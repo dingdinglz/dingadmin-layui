@@ -31,17 +31,8 @@
   <div class="layui-side layui-bg-black">
     <div class="layui-side-scroll">
       <ul class="layui-nav layui-nav-tree">
-        <li class="layui-nav-item layui-nav-itemed">
-          <a class="" href="javascript:;">menu group 1</a>
-          <dl class="layui-nav-child">
-            <dd><a href="javascript:;">menu 1</a></dd>
-            <dd><a href="javascript:;">menu 2</a></dd>
-            <dd><a href="javascript:;">menu 3</a></dd>
-            <dd><a href="javascript:;">the links</a></dd>
-          </dl>
-        </li>
         {{range .DingAdminMenuGroups}}
-        <li class="layui-nav-item">
+        <li class="layui-nav-item layui-nav-itemed">
           <a href="javascript:;">{{.Text}}</a>
           <dl class="layui-nav-child">
             {{range .Menus}}
@@ -61,6 +52,7 @@
   </div>
   <div class="layui-footer">
     copyright &copy; <a href="{{.DingAdminConfig.AuthorLink}}">{{.DingAdminConfig.Author}}</a> 2024
+    Powered by <a href="https://github.com/dingdinglz/dingadmin">dingadmin</a>
   </div>
 </div>
 <script src="//unpkg.com/layui@2.9.20/dist/layui.js"></script>
