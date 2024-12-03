@@ -16,15 +16,19 @@
     <ul class="layui-nav layui-layout-right">
 
       <li class="layui-nav-item layui-hide layui-show-sm-inline-block">
+        {{if eq .DingAdminUser ""}}
         <a href="javascript:;">
-          <img src="//unpkg.com/outeres@0.0.10/img/layui/icon-v2.png" class="layui-nav-img">
-          tester
+          未登录
+        </a>
+        {{else}}
+        <a href="javascript:;">
+          {{.DingAdminUser}}
         </a>
         <dl class="layui-nav-child">
-          <dd><a href="javascript:;">Your Profile</a></dd>
           <dd><a href="javascript:;">Settings</a></dd>
-          <dd><a href="javascript:;">Sign out</a></dd>
+          <dd><a href="javascript:;">登出</a></dd>
         </dl>
+        {{end}}
       </li>
     </ul>
 
@@ -56,5 +60,11 @@
     Powered by <a href="https://github.com/dingdinglz/dingadmin">dingadmin</a>
   </div>
 </div>
+<script>
+  if("{{.LayuiThis}}" != "")
+  {
+    layui.$("#{{.LayuiThis}}").addClass("layui-this");
+  }
+</script>
 </body>
 </html>
